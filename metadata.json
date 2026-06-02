@@ -1,0 +1,6 @@
+{
+  "name": "Eatsuki: RobMan",
+  "description": "A gamified food gacha drawing app designed to help UP Manila students explore 100% of the food establishments at Robinsons Place Manila.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
