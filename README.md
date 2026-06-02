@@ -1,21 +1,36 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://ai.google.dev/static/site-assets/images/share-ais-513315318.png" />
-</div>
+# Eatsuki: RobMan 🍱✨
+> "Break the comfort food loop. Complete the local culinary map."
 
-# Run and deploy your AI Studio app
+**Eatsuki: RobMan** is a utility-driven, gamified mobile application designed specifically for the community at the University of the Philippines Manila. It solves a ubiquitous student dilemma: the severe decision fatigue associated with choosing where to eat during class breaks at Robinsons Place Manila.
 
-This contains everything you need to run your app locally.
+While the mall hosts a massive directory of dining options, students frequently experience a "comfort food loop," repeatedly visiting the same few familiar establishments throughout their stay. Eatsuki breaks this loop by cataloging every single dining and dessert option in the mall and transforming the selection process into a high-engagement, **Gacha-style random draw**.
 
-View your app in AI Studio: https://ai.studio/apps/d41d7618-8268-44cb-a3cc-9a7ff2c29e52
+---
 
-## Run Locally
+## 🎯 Project Objectives
+The ultimate goal of the application is **absolute exploration**. Over a four-year academic lifecycle, the app systematically tracks, incentivizes, and guides users to successfully dine at 100% of the food establishments within Robinsons Place Manila without repeating past options.
 
-**Prerequisites:**  [Android Studio](https://developer.android.com/studio)
+---
 
+## 🛠️ Core Mechanical Architecture
 
-1. Open Android Studio
-2. Select **Open** and choose the directory containing this project
-3. Allow Android Studio to fix any incompatibilities as it imports the project.
-4. Create a file named `.env` in the project directory and set `GEMINI_API_KEY` in that file to your Gemini API key (see `.env.example` for an example)
-5. Remove this line from the app's `build.gradle.kts` file: `signingConfig = signingConfigs.getByName("debugConfig")`
-6. Run the app on an emulator or physical device
+### 1. The Gacha Roll Flow
+* **Category Filter:** Users initiate a binary choice to isolate their current craving: **Dine** (heavy full meals) or **Desserts** (milk tea, coffee, snacks).
+* **Randomizer Draw Engine:** Executes an algorithm pulling exclusively from the active filtered subset of establishments.
+* **Metadata Display:** Returns the drawn shop alongside critical local attributes: Price Range tier, Floor/Wing Level, Community Ratings, and a curated Culinary Description.
+
+### 2. The Pool Exclusion Engine (Core Mechanism)
+To make the "completionist" goal mathematically viable, the repository utilizes a dynamic database status engine:
+* Once an establishment is officially **Accepted** and **Confirmed**, it is instantly flagged as `Visited` in the database.
+* Subsequent rolls completely omit all flagged entities, forcing the algorithm to distribute chances strictly among unvisited options.
+
+### 3. Overview Hub & Statistical Analytics
+* **Completion Analytics:** Tracks real-time completion progression metrics (e.g., *"23 out of 87 Shops Visited"*).
+* **Dynamic Rating Journal:** Gives users full authority to log, input, and retroactively edit personal ratings, creating an implicit feedback loop for future manual returns.
+
+---
+
+## 📱 UI/UX Design Language
+Built with an emphasis on mitigating decision paralysis, the interface features:
+* **Structural Flatness:** No deep menus or multi-layered navigation hierarchies; immediate conduit from launch to roll within seconds.
+* **High-Contrast Typography:** Clear emphasis on the drawn establishment name paired with understated, clean animation transitions.
